@@ -25,3 +25,5 @@ Criar um CRUD para um usuário:
  ### Tecnologias:
  - ORM: SQLAlchemy
  - Banco de dados: MySQL
+ - Containerização : Docker
+ - Orquestração de containers: Docker Compose
