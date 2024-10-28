@@ -1,6 +1,7 @@
 from services.usuario_service import UsuarioService
 from repositories.usuario_repository import UsuarioRepository
 from config.database import Session
+from os import system
 
 def main():
     session = Session()
@@ -10,8 +11,8 @@ def main():
     #Solicitando dados para o usuário.
     print("\nAdicionando usuário.")
     nome = input("Digite seu nome: ")
-    email = input("Digite seu email:")
-    senha = input("Digite sua senha:")
+    email = input("Digite seu email: ")
+    senha = input("Digite sua senha: ")
 
     service.criar_usuario(nome=nome,email=email,senha=senha)
 
@@ -22,4 +23,5 @@ def main():
         print(f"Nome: {usuario.nome} - E-mail: {usuario.email} - Senha: {usuario.senha}")
 
 if __name__ == "__main__":
+    system("cls || clear")
     main()
