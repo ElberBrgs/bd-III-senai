@@ -12,9 +12,12 @@ def main():
 
     while True:
         print("\n///Código/// \t ///Descrição///")
-        print("1 \t Adicionar usuário.")
-        print("2 \t Pesquisar um usuário.")
-        print("3 \t Exibir usuários.")
+        print("1-Adicionar usuário.")
+        print("2-Pesquisar um usuário.")
+        #print("3-Atualizar dados de um usuário.")
+        #print("4-Excluir um usuário.")
+        print("5-Exibir todos os usuários cadastrados.")
+        #print("0-Sair.")
     
         
         resposta = int(input("Informe o código desejado: "))
@@ -29,6 +32,8 @@ def main():
 
                 service.criar_usuario(nome=nome,email=email,senha=senha)
             case 2:
+                service.pesquisar_usuario_unico()
+            case 5:
                 print("\nListando todos os usuários cadastrados.")
                 lista_usuarios = service.listar_todos_usuarios()
                 for usuario in lista_usuarios:
