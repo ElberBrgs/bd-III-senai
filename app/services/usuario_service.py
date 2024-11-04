@@ -40,3 +40,44 @@ class UsuarioService:
             print(f"Erro ao pesquisar o usuário: {error}")
         except Exception as error:
             print(f"Erro inesperado: {error}")
+
+    def atualizar_dados_usuario(self):
+        try:
+            print(f"\nAtualizando dados do usuário.")
+
+            email = input("Digite o e-mail do usuário: ") 
+            cadastrado = self.repository.pesquisar_usuario_por_email(email)
+
+            if cadastrado:
+                cadastrado.nome = input("\nDigite um novo nome: ")
+                cadastrado.email = input("\nDigite um novo e-mail: ")
+                cadastrado.senha = input("\nDigite uma nova senha: ")
+                self.repository.salvar_usuario(cadastrado)
+                print("\nDados de usuário atualizados.")
+            else:
+                print("Usuário não encontrado.")
+                return
+        
+        except TypeError as error:
+            print(f"Erro ao atualizar o usuário: {error}")
+        except Exception as error:
+            print(f"Erro inesperado: {error}")
+
+    def excluir_dados_usuario(self):
+        try:
+            print("\nExcluindo dados do usuário.")
+
+            email = input("Digite o e-mail do usuário que será excluído: ")
+            cadastrado = self.repository.pesquisar_usuario_por_email(email)
+
+            if cadastrado:
+                self.repository.excluir_usuario(cadastrado)
+                print("\nUsuário excluído.")
+            else:
+                print("Usuário não encontrado.")
+                return
+        
+        except TypeError as error:
+            print(f"Erro ao excluir o usuário: {error}")
+        except Exception as error:
+            print(f"Erro inesperado: {error}")

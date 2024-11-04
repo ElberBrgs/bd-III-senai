@@ -14,10 +14,10 @@ def main():
         print("\n///Código/// \t ///Descrição///")
         print("1-Adicionar usuário.")
         print("2-Pesquisar um usuário.")
-        #print("3-Atualizar dados de um usuário.")
-        #print("4-Excluir um usuário.")
+        print("3-Atualizar dados de um usuário.")
+        print("4-Excluir um usuário.")
         print("5-Exibir todos os usuários cadastrados.")
-        #print("0-Sair.")
+        print("0-Sair.")
     
         
         resposta = int(input("Informe o código desejado: "))
@@ -33,11 +33,17 @@ def main():
                 service.criar_usuario(nome=nome,email=email,senha=senha)
             case 2:
                 service.pesquisar_usuario_unico()
+            case 3:
+                service.atualizar_dados_usuario()
+            case 4:
+                service.excluir_dados_usuario()
             case 5:
                 print("\nListando todos os usuários cadastrados.")
                 lista_usuarios = service.listar_todos_usuarios()
                 for usuario in lista_usuarios:
                     print(f"Nome: {usuario.nome} - E-mail: {usuario.email} - Senha: {usuario.senha}")
+            case 0:
+                #Opcional : adicionar delay ao fechar terminal.    
                 break
             case _:
                 print("Código inválido, tente novamente.")            
