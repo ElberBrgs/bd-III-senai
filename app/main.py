@@ -12,12 +12,12 @@ def main():
 
     while True:
         print("\n///Código/// \t ///Descrição///")
-        print("1-Adicionar usuário.")
-        print("2-Pesquisar um usuário.")
-        print("3-Atualizar dados de um usuário.")
-        print("4-Excluir um usuário.")
-        print("5-Exibir todos os usuários cadastrados.")
-        print("0-Sair.")
+        print("1 - Adicionar usuário.")
+        print("2 - Pesquisar um usuário.")
+        print("3 - Atualizar dados de um usuário.")
+        print("4 - Excluir um usuário.")
+        print("5 - Exibir todos os usuários cadastrados.")
+        print("0 - Sair.")
     
         
         resposta = int(input("Informe o código desejado: "))

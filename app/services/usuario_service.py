@@ -16,7 +16,8 @@ class UsuarioService:
                 return
 
             self.repository.salvar_usuario(usuario)
-            print("Usuário cadastrado com sucesso.") 
+            print("Usuário cadastrado com sucesso.")
+
         except TypeError as error:
             print(f"Erro ao salvar o usuário: {error}")
         except Exception as error:       
