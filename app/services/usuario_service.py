@@ -77,7 +77,7 @@ class UsuarioService:
             else:
                 print("Usuário não encontrado.")
                 return
-        #!!! Exclui o usuário porém exibe o erro, consertar !!!
+        
         except TypeError as error:
             print(f"Erro ao excluir o usuário: {error}")
         except Exception as error:

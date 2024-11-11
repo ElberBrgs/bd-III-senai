@@ -15,14 +15,16 @@ class Usuario(Base):
 
     #Definindo características da classe.
     def __init__(self,nome:str,email:str,senha:str):
-        self.nome = self._verificar_valor_vazio(nome)
-        self.email = self._verificar_valor_vazio(email)
-        self.senha = self._verificar_valor_vazio(senha)
+        self.nome = self._verificar_tipo_e_valor(nome)
+        self.email = self._verificar_tipo_e_valor(email)
+        self.senha = self._verificar_tipo_e_valor(senha)
 
-    def _verificar_valor_vazio(self,valor):
-        if not isinstance(valor,str) or not valor.strip():
+    def _verificar_tipo_e_valor(self,valor):
+        if not isinstance(valor,str):
+            raise TypeError("Tipo inválido.")
+        if not valor.strip():
             raise ValueError("Insira um valor.")
         return valor
-
+    
 #Criando tabela no banco de dados.
 Base.metadata.create_all(bind=db)

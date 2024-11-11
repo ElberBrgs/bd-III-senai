@@ -25,35 +25,35 @@ def main():
         print("0 - Sair.")
     
         
-        resposta = int(input("Informe o código desejado: "))
+        resposta = input("Informe o código desejado: ")
         os.system("cls || clear")
         
         match(resposta):
-            case 1:
+            case "1":
                 print("\nAdicionando usuário.")
                 nome = input("Digite seu nome: ")
                 email = input("Digite seu email: ")
                 senha = input("Digite sua senha: ")
 
                 service.criar_usuario(nome=nome,email=email,senha=senha)
-            case 2:
+            case "2":
                 service.pesquisar_usuario_unico()
-            case 3:
+            case "3":
                 service.atualizar_dados_usuario()
-            case 4:
+            case "4":
                 service.excluir_dados_usuario()
-            case 5:
+            case "5":
                 print("\nListando todos os usuários cadastrados.")
                 lista_usuarios = service.listar_todos_usuarios()
                 for usuario in lista_usuarios:
                     print(f"Nome: {usuario.nome} - E-mail: {usuario.email} - Senha: {usuario.senha}")
-            case 0:
+            case "0":
                 #Opcional : adicionar delay ao fechar terminal.    
                 break
             case _:
                 print("Código inválido, tente novamente.")            
 
-
+    session.close()
 
 if __name__ == "__main__":
     os.system("cls || clear")
