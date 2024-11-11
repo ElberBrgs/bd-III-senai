@@ -1,7 +1,11 @@
-from services.usuario_service import UsuarioService
-from repositories.usuario_repository import UsuarioRepository
-from config.database import Session
-from os import system
+from app.services.usuario_service import UsuarioService
+from app.repositories.usuario_repository import UsuarioRepository
+from app.config.database import Session
+import sys
+import os
+
+#Adiciona o diretório 'app' como diretório padrão
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
 
 def main():
     session = Session()
@@ -21,7 +25,7 @@ def main():
     
         
         resposta = int(input("Informe o código desejado: "))
-        system("cls || clear")
+        os.system("cls || clear")
         
         match(resposta):
             case 1:
@@ -51,5 +55,5 @@ def main():
 
 
 if __name__ == "__main__":
-    system("cls || clear")
+    os.system("cls || clear")
     main()
