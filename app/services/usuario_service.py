@@ -53,7 +53,7 @@ class UsuarioService:
                 cadastrado.nome = input("\nDigite um novo nome: ")
                 cadastrado.email = input("\nDigite um novo e-mail: ")
                 cadastrado.senha = input("\nDigite uma nova senha: ")
-                self.repository.salvar_usuario(cadastrado)
+                self.repository.atualizar_usuario(cadastrado)
                 print("\nDados de usuário atualizados.")
             else:
                 print("Usuário não encontrado.")
